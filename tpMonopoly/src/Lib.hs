@@ -28,7 +28,7 @@ pasarPorElBanco :: Accion
 pasarPorElBanco = sumarDinero (40).cambiarTactica ("Comprador Compulsivo")
 
 enojarse :: Accion
-enojarse unjugador = sumarDinero 50 unjugador {acciones = [gritar]}
+enojarse unjugador = sumarDinero 50 unjugador {acciones = acciones unjugador ++ [gritar]}
 
 gritar :: Accion 
 gritar unjugador = unjugador {nombre = "AHHHH" ++ nombre unjugador}
