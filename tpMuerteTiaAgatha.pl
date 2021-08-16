@@ -1,4 +1,3 @@
-
 % 1a)
 viveEnLaMansion(tiaAgatha).
 viveEnLaMansion(mayordomo).
@@ -15,14 +14,13 @@ odia(charles,Persona):-
 odia(mayordomo,Persona):-
     odia(tiaAgatha,Persona).
 
-esMasRicoQue(Persona1,Persona2):-
-    not(odia(mayordomo,Persona1)),
-    viveEnLaMansion(Persona1).
+esMasRicoQue(Persona1,tiaAgatha):-
+    viveEnLaMansion(Persona1),
+    not(odia(mayordomo,Persona1)).
 
 quienMata(Asesino,Persona):-
     odia(Asesino,Persona),
-    not(esMasRicoQue(Asesino,Persona)),
-    viveEnLaMansion(Persona).
+    not(esMasRicoQue(Asesino,Persona)).
 
 /* 1b)  quienMataA(tiaAgatha,Asesino).
     Asesino = tiaAgatha.
